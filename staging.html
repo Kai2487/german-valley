@@ -166,6 +166,33 @@
       .gallery{grid-template-columns:repeat(2,1fr)}
       h1{font-size:30px}
     }
+    /* ===== HERO IMAGE ===== */
+.hero-image {
+  width: 100%;
+  min-height: 65vh;
+  max-height: 80vh;
+  overflow: hidden;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    min-height: 45vh;
+    border-radius: 16px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -221,7 +248,6 @@
            <img
              src="assets/images/hero.jpg"
              alt="German Valley – Wohnprojekt in Vilnius"
-             style="width:100%;height:auto;border-radius:16px;display:block;"
            >
           </div>
 
