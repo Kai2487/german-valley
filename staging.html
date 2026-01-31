@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>German Valley – Staging</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#1a1a1a;
+      --muted:#5a5a5a;
+      --line:#e9e9e9;
+      --card:#fafafa;
+      --max:1100px;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    header{
+      position:sticky; top:0; z-index:10;
+      background:rgba(255,255,255,.9);
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:240px;
+      text-decoration:none;
+    }
+    .brand img{height:38px; width:auto}
+    .brand .name{font-weight:700; letter-spacing:.2px}
+    .brand .tag{font-size:12px; color:var(--muted)}
+    .links{display:flex; gap:14px; flex-wrap:wrap; justify-content:center}
+    .links a{
+      text-decoration:none;
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .links a:hover{background:var(--card)}
+    .lang{
+      display:flex; gap:8px; align-items:center; justify-content:flex-end;
+      min-width:180px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:999px;
+      padding:8px 10px;
+      font-size:12px;
+      cursor:pointer;
+    }
+    .pill[aria-pressed="true"]{
+      background:#111; color:#fff; border-color:#111;
+    }
+
+    .hero{
+      padding:46px 0 22px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .card{
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.04);
+    }
+    .kicker{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.12em}
+    h1{margin:10px 0 10px; font-size:34px; line-height:1.15}
+    .lead{color:var(--muted); font-size:16px; margin:0 0 18px}
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      display:inline-block;
+      border-radius:999px;
+      padding:10px 14px;
+      text-decoration:none;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:600;
+      font-size:13px;
+    }
+    .btn.primary{background:#111; color:#fff; border-color:#111}
+    .btn:hover{transform:translateY(-1px)}
+    .hero-image{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#eaeaea;
+      min-height:280px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#6b6b6b;
+      font-size:13px;
+    }
+    .hero-image img{width:100%; height:100%; object-fit:cover; display:block}
+
+    section{padding:34px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
+      margin-bottom:14px;
+    }
+    h2{margin:0; font-size:22px}
+    .sub{margin:0; color:var(--muted); font-size:13px}
+
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .placeholder{
+      border:1px dashed #cfcfcf;
+      background: #fff;
+      border-radius:var(--radius);
+      padding:16px;
+      color:#6b6b6b;
+      font-size:13px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+    }
+    .thumb{
+      border:1px solid var(--line);
+      background:#eaeaea;
+      border-radius:14px;
+      overflow:hidden;
+      aspect-ratio: 4 / 3;
+      display:flex; align-items:center; justify-content:center;
+      color:#6b6b6b;
+      font-size:12px;
+    }
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block}
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:22px 0;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .foot{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .brand{min-width:auto}
+      .lang{min-width:auto}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      h1{font-size:30px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top">
+          <img src="assets/logo.png" alt="German Valley" />
+          <div>
+            <div class="name">GERMAN VALLEY</div>
+            <div class="tag">Staging · Onepage-Struktur</div>
+          </div>
+        </a>
+
+        <nav class="links" aria-label="Seitennavigation">
+          <a href="#projekt">Projekt</a>
+          <a href="#haeuser">Häuser</a>
+          <a href="#lage">Lage</a>
+          <a href="#familien">Für Familien</a>
+          <a href="#zeitplan">Zeitplan</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="lang" aria-label="Sprache wählen">
+          <button class="pill" aria-pressed="true" type="button">DE</button>
+          <button class="pill" aria-pressed="false" type="button">EN</button>
+          <button class="pill" aria-pressed="false" type="button">LT</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card">
+            <div class="kicker">Wohnprojekt in Vilnius</div>
+            <h1>Ankommen. Spielen. Zuhause sein.</h1>
+            <p class="lead">
+              Platzhaltertext: Hier kommt später eine kurze, hochwertige Einleitung (DE/EN/LT).
+              Fokus: Vermietung an deutsche Soldatenfamilien.
+            </p>
+            <div class="cta-row">
+              <a class="btn primary" href="#kontakt">Kontakt</a>
+              <a class="btn" href="#haeuser">Häuser ansehen</a>
+            </div>
+          </div>
+
+          <div class="hero-image" aria-label="Hero Bild Platzhalter">
+            <!-- Später: <img src="assets/andhome/hero.jpg" alt="German Valley – Außenansicht"> -->
+            Hero-Bild (Platzhalter)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projekt -->
+    <section id="projekt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Das Wohnprojekt</h2>
+            <p class="sub">Platzhalter: Kurzbeschreibung, Konzept, Vermietung (kein Verkauf).</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="placeholder">
+            <strong>Projektbeschreibung (Platzhalter)</strong><br>
+            • Wer wir sind (German Valley)<br>
+            • Für wen: deutsche Soldatenfamilien<br>
+            • Was: 16 Häuser zur Vermietung<br>
+            • Warum: sichere, familienfreundliche Umgebung
+          </div>
+          <div class="placeholder">
+            <strong>Highlights (Platzhalter)</strong><br>
+            • Ruhige Lage<br>
+            • Hochwertige Ausstattung<br>
+            • Familienfreundliche Umgebung<br>
+            • Nähe zu Infrastruktur
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Häuser -->
+    <section id="haeuser">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Die Häuser</h2>
+            <p class="sub">Platzhalter: Ausstattung, Haus-Typ, Anzahl (16), Galerie.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="placeholder">
+            <strong>Ausstattung (Platzhalter)</strong><br>
+            • Wohnfläche / Zimmer / Bäder (später)<br>
+            • Heizung / Energie (später)<br>
+            • Garten / Stellplätze (später)
+          </div>
+          <div class="placeholder">
+            <strong>Hinweis</strong><br>
+            Wir vermieten die Häuser – sie werden nicht verkauft.
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="gallery" aria-label="Galerie">
+          <div class="thumb">img1.jpg</div>
+          <div class="thumb">img2.jpg</div>
+          <div class="thumb">img3.jpg</div>
+          <div class="thumb">img4.jpg</div>
+          <!-- Später z.B.: <div class="thumb"><img src="assets/andhome/img1.jpg" alt=""></div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Lage -->
+    <section id="lage">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Lage & Umgebung</h2>
+            <p class="sub">Platzhalter: Anbindung, Schulen, Einkauf, Karte-Link (später).</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="placeholder">
+            <strong>Vilnius & Alltag (Platzhalter)</strong><br>
+            • Wegezeiten (später)<br>
+            • Infrastruktur (später)<br>
+            • Nahversorgung (später)
+          </div>
+          <div class="placeholder">
+            <strong>Karte / Standort (Platzhalter)</strong><br>
+            Später: eingebettete Karte oder Link (Google Maps).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Für Familien -->
+    <section id="familien">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Für Familien gedacht</h2>
+            <p class="sub">Platzhalter: Sicherheit, Nachbarschaft, Kinder, Ankommen.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="placeholder"><strong>Sicherheit</strong><br>Platzhaltertext</div>
+          <div class="placeholder"><strong>Gemeinschaft</strong><br>Platzhaltertext</div>
+          <div class="placeholder"><strong>Alltag & Wohlfühlen</strong><br>Platzhaltertext</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zeitplan -->
+    <section id="zeitplan">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Zeitplan</h2>
+            <p class="sub">Platzhalter: Status + Bezugsfertig ab 01.09.2026.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="placeholder">
+            <strong>Bezugsfertig</strong><br>
+            Ab <strong>01.09.2026</strong> (geplant).<br>
+            <span style="color:#6b6b6b">Details folgen.</span>
+          </div>
+          <div class="placeholder">
+            <strong>Nächste Schritte</strong><br>
+            • Interessensbekundung<br>
+            • Informationspaket (später)<br>
+            • Besichtigung/Übergabe (später)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Kontakt</h2>
+            <p class="sub">Platzhalter: Kontaktinfos + später Formular (optional).</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="kicker">Kontakt</div>
+            <p style="margin:10px 0 0; color:var(--muted)">
+              E-Mail: <a href="mailto:info@german-valley.lt">info@german-valley.lt</a><br>
+              Telefon: <a href="tel:+37060222510">+370 (602) 22 510</a><br>
+              Ansprechpartnerinnen: Sabine Güdelhöfer & Viktoria Werle
+            </p>
+            <div style="height:12px"></div>
+            <p style="margin:0; color:var(--muted); font-size:13px">
+              Hinweis: Diese Seite ist eine interne Staging-Version (nicht indexiert).
+            </p>
+          </div>
+
+          <div class="placeholder">
+            <strong>Kontaktformular (optional, später)</strong><br>
+            • Name<br>
+            • E-Mail<br>
+            • Nachricht<br>
+            • Sprache<br>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>© <span id="y"></span> German Valley · Vilnius, Litauen</div>
+        <div>Staging · noindex/nofollow</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
