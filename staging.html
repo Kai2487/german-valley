@@ -185,28 +185,54 @@
   border-radius: 18px;
 }
 
+/* ===== HERO MOBILE FEINSCHLIFF ===== */
 @media (max-width: 768px) {
-  .hero-image {
-    margin-top: 16px;
+
+  /* Textbereich schöner und nicht zu breit */
+  .hero-inner.container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  .hero-image img {
-    border-radius: 14px;
+  /* Headline kompakter */
+  .hero h1 {
+    font-size: 28px;
+    line-height: 1.15;
+    margin-bottom: 10px;
   }
 
-  h1 {
-    font-size: 26px;
-    line-height: 1.2;
+  /* Text besser lesbar */
+  .hero .muted,
+  .hero .lead {
+    font-size: 15px;
+    line-height: 1.45;
   }
 
+  /* Buttons untereinander + volle Breite */
   .cta-row {
+    display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 14px;
   }
-
   .cta-row a {
     width: 100%;
     text-align: center;
+  }
+
+  /* Bild: vollständig sichtbar, keine Abschneidung */
+  .hero-image {
+    margin-top: 16px;
+    width: 100%;
+    padding: 0 16px;       /* damit es links/rechts Luft hat */
+    box-sizing: border-box;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;          /* wichtig: volle Sichtbarkeit */
+    display: block;
+    border-radius: 16px;
   }
 }
 
