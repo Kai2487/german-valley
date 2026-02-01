@@ -216,17 +216,23 @@
 
   .tag{
     display: none; /* "Staging · Onepage-Struktur" ausblenden */
-    /* alte Sprachwahl ausblenden (unter dem Menü) */
+    }
+  /* ===== Mobile Navigation Fix ===== */
+@media (max-width: 768px) {
+
+  /* alte Sprachwahl ausblenden (die doppelte) */
   header .lang {
     display: none;
   }
 
-  /* Sprachwahl NUR in der Top-Nav anzeigen */
+  /* Sprachwahl nur oben rechts (Top-Nav) */
   .nav-right .lang {
     display: flex;
     gap: 8px;
   }
+
 }
+
 
   </style>
 </head>
