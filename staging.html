@@ -216,6 +216,15 @@
 
   .tag{
     display: none; /* "Staging · Onepage-Struktur" ausblenden */
+    /* alte Sprachwahl ausblenden (unter dem Menü) */
+  header .lang {
+    display: none;
+  }
+
+  /* Sprachwahl NUR in der Top-Nav anzeigen */
+  .nav-right .lang {
+    display: flex;
+    gap: 8px;
   }
 }
 
