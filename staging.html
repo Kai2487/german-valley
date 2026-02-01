@@ -267,6 +267,18 @@
     display: none;
   }
 }
+/* Mobile Menü – Standard */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+/* Mobile Menü – geöffnet */
+.mobile-menu.open {
+  display: flex;
+}
 
   </style>
 </head>
@@ -302,18 +314,7 @@
     <a href="#zeitplan">Zeitplan</a>
     <a href="#kontakt">Kontakt</a>
   </nav>
-        /* Mobile Menü – Standard */
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  gap: 16px;
-  padding: 16px 0;
-}
-
-/* Mobile Menü – geöffnet */
-.mobile-menu.open {
-  display: flex;
-}
+ 
 
 </header>
 
