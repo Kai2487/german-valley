@@ -233,6 +233,35 @@
 
 }
 
+/* =========================
+   MOBILE HEADER FIX
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Desktop-Navigation ausblenden */
+  .nav .links {
+    display: none;
+  }
+
+  /* Mobile-Menü initial ausblenden */
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 0;
+  }
+
+  /* Sprachwahl NUR oben rechts anzeigen */
+  header .lang {
+    display: flex;
+    gap: 8px;
+  }
+
+  /* Sprachwahl NICHT im Mobile-Menü anzeigen */
+  .mobile-menu .lang {
+    display: none;
+  }
+}
 
   </style>
 </head>
