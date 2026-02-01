@@ -188,6 +188,24 @@
 /* ===== HERO MOBILE FEINSCHLIFF ===== */
 /* ===== MOBILE HEADER / NAV ===== */
 @media (max-width: 768px) {
+
+  /* Bild-Container */
+  .hero-image{
+    margin-top: 12px;
+    padding: 0 12px;          /* links/rechts Luft */
+    box-sizing: border-box;   /* verhindert Overflow */
+  }
+
+  /* Bild selbst */
+  .hero-image img{
+    width: 100%;
+    height: auto;             /* wichtig: keine Verzerrung */
+    display: block;
+    border-radius: 18px;
+    object-fit: contain;      /* wichtig: NICHT abschneiden */
+    background: #f2f2f2;      /* falls oben/unten „Luft“ entsteht */
+  }
+
   header{
     padding: 8px 0;
   }
