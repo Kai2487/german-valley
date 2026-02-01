@@ -186,53 +186,55 @@
 }
 
 /* ===== HERO MOBILE FEINSCHLIFF ===== */
+/* ===== MOBILE HEADER / NAV ===== */
 @media (max-width: 768px) {
 
-  /* Textbereich schöner und nicht zu breit */
-  .hero-inner.container {
-    padding-left: 16px;
-    padding-right: 16px;
+  header {
+    position: sticky;   /* bleibt oben */
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(8px);
   }
 
-  /* Headline kompakter */
-  .hero h1 {
-    font-size: 28px;
-    line-height: 1.15;
-    margin-bottom: 10px;
+  header .container {
+    padding: 10px 14px;     /* weniger Höhe */
   }
 
-  /* Text besser lesbar */
-  .hero .muted,
-  .hero .lead {
-    font-size: 15px;
-    line-height: 1.45;
+  /* Logo/Brand kompakter */
+  .brand img {
+    height: 34px;           /* kleiner */
+    width: auto;
+  }
+  .name { 
+    font-size: 14px;
+    line-height: 1.1;
+  }
+  .tag {
+    font-size: 12px;
   }
 
-  /* Buttons untereinander + volle Breite */
-  .cta-row {
+  /* Nav-Links auf Mobile ausblenden */
+  nav.links {
+    display: none;
+  }
+
+  /* Sprachbuttons schön rechts, kleiner */
+  .lang {
+    margin-left: auto;
+    gap: 8px;
+  }
+  .pill {
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 999px;
+  }
+
+  /* Header Layout: alles in einer Reihe */
+  .nav {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 10px;
-    margin-top: 14px;
-  }
-  .cta-row a {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Bild: vollständig sichtbar, keine Abschneidung */
-  .hero-image {
-    margin-top: 16px;
-    width: 100%;
-    padding: 0 16px;       /* damit es links/rechts Luft hat */
-    box-sizing: border-box;
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: auto;          /* wichtig: volle Sichtbarkeit */
-    display: block;
-    border-radius: 16px;
   }
 }
 
